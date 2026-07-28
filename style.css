@@ -1,0 +1,122 @@
+/* Radius Recon site — the same design tokens the app's reports use
+   (Docs/Design/mockups): slate brand band, vivid accent, 760 px readable
+   column, system font stack, light and dark. */
+
+:root {
+  --band-bg: #274E68;
+  --accent: #0A84FF;
+  --paper: #F5F6F8;
+  --card: #FFFFFF;
+  --ink: #1C1C1E;
+  --muted: #6E6E73;
+  --hairline: rgba(128, 128, 128, 0.25);
+  --content-max: 760px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --band-bg: #1B3646;
+    --accent: #409CFF;
+    --paper: #111214;
+    --card: #1C1D1F;
+    --ink: #F2F2F7;
+    --muted: #98989E;
+    --hairline: rgba(128, 128, 128, 0.28);
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 17px/1.55 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+        "Helvetica Neue", Arial, sans-serif;
+}
+
+/* Brand band */
+header.band {
+  background: var(--band-bg);
+  color: #fff;
+  padding: 28px 20px;
+}
+
+header.band .inner {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+header.band img { width: 52px; height: 52px; flex: none; }
+header.band .eyebrow {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.72;
+  margin: 0 0 2px;
+}
+header.band h1 { font-size: 27px; margin: 0; line-height: 1.15; }
+
+nav.links {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 14px 20px 0;
+  display: flex;
+  gap: 18px;
+  flex-wrap: wrap;
+}
+nav.links a { color: var(--accent); text-decoration: none; font-weight: 600; }
+nav.links a:hover { text-decoration: underline; }
+
+main {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 22px 20px 64px;
+}
+
+h2 {
+  font-size: 21px;
+  margin: 32px 0 10px;
+  padding-bottom: 4px;
+  border-bottom: 2px solid var(--accent);
+  color: var(--accent);
+}
+h3 { font-size: 17px; margin: 22px 0 6px; }
+p, li { margin: 9px 0; }
+ul { padding-left: 22px; }
+a { color: var(--accent); }
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--hairline);
+  border-radius: 14px;
+  padding: 16px 18px;
+  margin: 16px 0;
+}
+
+.lede { font-size: 19px; }
+.muted { color: var(--muted); font-size: 15px; }
+
+.contact {
+  font-size: 19px;
+  font-weight: 600;
+  word-break: break-word;
+}
+
+footer {
+  border-top: 1px solid var(--hairline);
+  margin-top: 40px;
+  padding: 20px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 14px;
+}
+
+@media (max-width: 520px) {
+  header.band h1 { font-size: 22px; }
+  header.band img { width: 42px; height: 42px; }
+}
