@@ -25,7 +25,7 @@
 </nav>
 
 <main>
-  <p class="muted"><strong>Effective date:</strong> October 9, 2026</p>
+  <p class="muted"><strong>Effective date:</strong> October 15, 2026</p>
 
   <p class="lede">
     RadiusON is a local-first field documentation app. This policy
@@ -53,11 +53,19 @@
   <h2>Device permissions and why the app asks</h2>
   <ul>
     <li><strong>Location ("While Using the App" only)</strong> — asked for
-        when you drop your first GPS pin. It stamps captures and pins with GPS
-        coordinates, shows where you are on the project map, and guides you
-        back to a finding. The app uses location only while a screen that needs
-        it is open, never in the background, and never records a route.
-        Location data is stored on your device only.</li>
+        when you drop your first GPS pin or start your first field session. It
+        stamps captures and pins with GPS coordinates, shows where you are on
+        the project map, and guides you back to a finding. Otherwise the app
+        uses location only while a screen that needs it is open.</li>
+    <li><strong>Field sessions — only when you start one.</strong> A field
+        session records the path you walk on a site, so it can be shown on the
+        project map and exported as GPX. It runs only after you tap Start
+        Session, and keeps recording while the phone is locked or the app is in
+        the background — iOS shows its location indicator the whole time — until
+        you tap End Session. The app never starts a session itself, never asks
+        for "Always" location access, and records no path outside a session you
+        started. Recorded paths are stored on your device only, and deleting a
+        session or its project deletes its path.</li>
     <li><strong>Camera</strong> — to take photos and video for your projects.</li>
     <li><strong>Microphone</strong> — to record audio notes.</li>
     <li><strong>Photos (add-only)</strong> — only if you enable "Save Captures
@@ -73,16 +81,27 @@
   <h2>Data that leaves your device — only when you choose</h2>
   <ul>
     <li><strong>Exports and sharing.</strong> When you export a report (PDF,
-        Word, web page, ZIP, project package, GeoJSON or KML) and share it, the
-        data goes wherever you send it. That transfer is entirely under your
+        Word, web page, ZIP, project package, GeoJSON, KML or GPX) and share it,
+        the data goes wherever you send it. That transfer is entirely under your
         control, and the Location Privacy setting decides how precise any
-        coordinates in it are.</li>
+        coordinates in it are. A photo, GPS pin or note you share on its own
+        carries the location it was recorded with — a shared pin includes its
+        coordinate and an Apple Maps link to it.</li>
     <li><strong>Apple Maps services, when you ask.</strong> The map itself
         comes from Apple. When you look up an address, search for a place, list
         nearby places, open Look Around, or ask for directions, the coordinate
         or search text needed for that request is sent to Apple and handled
         under Apple's privacy terms. Nothing is sent until you tap, and nothing
         is sent to us.</li>
+    <li><strong>Places you share into the app.</strong> When you share a place
+        from Apple Maps or Google Maps to RadiusON, the app reads what that app
+        sent. If it is a short link, RadiusON asks the link's own service
+        (Google for a Google Maps link, Apple for an Apple Maps link) where it
+        points, without opening it, so it can find the coordinate. If only an
+        address came across, RadiusON asks Apple Maps for its coordinate. These
+        requests happen because you shared the place, carry only the link or
+        address, and are handled under Google's or Apple's privacy terms.
+        Nothing is sent to us.</li>
     <li><strong>Optional AI provider.</strong> RadiusON can send capture
         content (text, audio, or images you select) to an AI endpoint
         <strong>that you configure yourself</strong> in Settings, for features
